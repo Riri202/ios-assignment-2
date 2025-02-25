@@ -20,4 +20,10 @@ class ProductManager {
     func addProduct (){
         
     }
+    
+    func updateQuantity (name: String, newQuantity: Int) {
+        if let index = allProducts.firstIndex(where: {$0.name == name}) {
+            allProducts[index].quantity = newQuantity
+        }
+    }
 }

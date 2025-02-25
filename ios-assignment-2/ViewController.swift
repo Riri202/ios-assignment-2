@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController,
-                        UITableViewDelegate,
+                      UITableViewDelegate,
                       UITableViewDataSource {
     
     
@@ -17,16 +17,11 @@ class ViewController: UIViewController,
     // outlets
     @IBOutlet weak var productTable: UITableView!
     @IBOutlet weak var productLabel: UILabel!
-    
+    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
-    // when a dif=git butttin is clicjed
-
-    @IBAction func DigitClicked(_ sender: UIButton) {
-        if let goodDigit = sender.titleLabel?.text {
-            quantityLabel.text = "\(String(describing: quantityLabel.text))" + "\(goodDigit)"
-        }
-        
-    }
+    var selectedProductPrice: Int = 0
+    var selectedProductQuantity: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +30,11 @@ class ViewController: UIViewController,
         
         productTable.dataSource = self
         productTable.delegate = self
-        quantityLabel.text = "0"
+        
+        quantityLabel.text = ""
         productLabel.text = "select an item"
-        
-        
+        totalLabel.text = ""
+        selectedProductPrice = 0
     }
     
     
@@ -68,12 +64,45 @@ class ViewController: UIViewController,
     
     // when a table row is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
         if let goodProduct = productManager?.allProducts[indexPath.row] {
             productLabel.text = goodProduct.name
+            selectedProductPrice = goodProduct.price
+            selectedProductQuantity = goodProduct.quantity
         }
     }
     
+    
+    // when a digit button is clicked
+    
+    @IBAction func DigitClicked(_ sender: UIButton) {
+        if let goodDigit = sender.titleLabel?.text {
+            quantityLabel.text = String(describing: quantityLabel.text!) + String(describing: goodDigit)
+            if let quantity = Int( quantityLabel.text ?? "") {
+                totalLabel.text = "\(quantity * Int(selectedProductPrice))"
+                
+            }
+        }
+        
+    }
+    
+    // clear quantity label
+    @IBAction func clearQuantityLabel(_ sender: Any) {
+        quantityLabel.text = ""
+    }
+    
+    // when buy buttin is clicked
+    
+    @IBAction func Buy(_ sender: Any) {
+        var newQuantity = selectedProductQuantity - (Int(quantityLabel.text!) ?? 0)
+        print(newQuantity)
+        productManager!.updateQuantity(name: productLabel.text!, newQuantity: newQuantity)
+        productTable.reloadData()
+        quantityLabel.text = ""
+        productLabel.text = "select an item"
+        totalLabel.text = ""
+        selectedProductPrice = 0
+    }
     
     
 }
