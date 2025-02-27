@@ -37,6 +37,12 @@ class ViewController: UIViewController,
         selectedProductPrice = 0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        productTable.reloadData()
+    }
+
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,6 +60,10 @@ class ViewController: UIViewController,
             if let goodproduct = productManager?.allProducts[indexPath.row] {
                 cell.textLabel?.text = "\(goodproduct.name)"
                 cell.detailTextLabel?.text = "\(goodproduct.quantity)"
+//                
+//                if let extraLabel = cell.viewWithTag(100) as? UILabel {
+//                    extraLabel.text = "\(goodproduct.price)"
+//                }
             }
             return cell
         } else {
@@ -89,15 +99,23 @@ class ViewController: UIViewController,
     // clear quantity label
     @IBAction func clearQuantityLabel(_ sender: Any) {
         quantityLabel.text = ""
+        productLabel.text = "select an item"
+        totalLabel.text = ""
+        selectedProductPrice = 0
     }
     
-    // when buy buttin is clicked
+    // when buy button is clicked
     
     @IBAction func Buy(_ sender: Any) {
         var newQuantity = selectedProductQuantity - (Int(quantityLabel.text!) ?? 0)
         print(newQuantity)
+        
         productManager!.updateQuantity(name: productLabel.text!, newQuantity: newQuantity)
+        
+        productManager?.addToPurchaseHistory(name: productLabel.text!, quantity: (Int(quantityLabel.text!) ?? 0))
+        
         productTable.reloadData()
+        
         quantityLabel.text = ""
         productLabel.text = "select an item"
         totalLabel.text = ""

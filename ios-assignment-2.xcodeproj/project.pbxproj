@@ -15,6 +15,11 @@
 		86A9E8742D68EFFA00E9EEC9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 86A9E8732D68EFFA00E9EEC9 /* Base */; };
 		86D7058A2D6E5F560027248E /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D705892D6E5F560027248E /* ProductModel.swift */; };
 		86D7058C2D6E60850027248E /* ProductManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D7058B2D6E60850027248E /* ProductManagerModel.swift */; };
+		86E123042D6FE31A004E3B4C /* ManagerPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E123032D6FE31A004E3B4C /* ManagerPanelViewController.swift */; };
+		86E123082D6FE8F7004E3B4C /* PurchaseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E123072D6FE8F7004E3B4C /* PurchaseHistoryTableViewController.swift */; };
+		86E1230A2D6FED36004E3B4C /* PurchaseHistoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E123092D6FED36004E3B4C /* PurchaseHistoryDetailsViewController.swift */; };
+		86E1230C2D6FF29B004E3B4C /* RestockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E1230B2D6FF29B004E3B4C /* RestockViewController.swift */; };
+		86E1230E2D6FF311004E3B4C /* RestockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E1230D2D6FF311004E3B4C /* RestockTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		86A9E8752D68EFFA00E9EEC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86D705892D6E5F560027248E /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		86D7058B2D6E60850027248E /* ProductManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManagerModel.swift; sourceTree = "<group>"; };
+		86E123032D6FE31A004E3B4C /* ManagerPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerPanelViewController.swift; sourceTree = "<group>"; };
+		86E123072D6FE8F7004E3B4C /* PurchaseHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewController.swift; sourceTree = "<group>"; };
+		86E123092D6FED36004E3B4C /* PurchaseHistoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryDetailsViewController.swift; sourceTree = "<group>"; };
+		86E1230B2D6FF29B004E3B4C /* RestockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestockViewController.swift; sourceTree = "<group>"; };
+		86E1230D2D6FF311004E3B4C /* RestockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestockTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +79,11 @@
 				86A9E8752D68EFFA00E9EEC9 /* Info.plist */,
 				86D705892D6E5F560027248E /* ProductModel.swift */,
 				86D7058B2D6E60850027248E /* ProductManagerModel.swift */,
+				86E123032D6FE31A004E3B4C /* ManagerPanelViewController.swift */,
+				86E123072D6FE8F7004E3B4C /* PurchaseHistoryTableViewController.swift */,
+				86E123092D6FED36004E3B4C /* PurchaseHistoryDetailsViewController.swift */,
+				86E1230B2D6FF29B004E3B4C /* RestockViewController.swift */,
+				86E1230D2D6FF311004E3B4C /* RestockTableViewCell.swift */,
 			);
 			path = "ios-assignment-2";
 			sourceTree = "<group>";
@@ -146,9 +161,14 @@
 			files = (
 				86D7058C2D6E60850027248E /* ProductManagerModel.swift in Sources */,
 				86A9E86C2D68EFF800E9EEC9 /* ViewController.swift in Sources */,
+				86E1230C2D6FF29B004E3B4C /* RestockViewController.swift in Sources */,
+				86E123082D6FE8F7004E3B4C /* PurchaseHistoryTableViewController.swift in Sources */,
+				86E123042D6FE31A004E3B4C /* ManagerPanelViewController.swift in Sources */,
+				86E1230E2D6FF311004E3B4C /* RestockTableViewCell.swift in Sources */,
 				86A9E8682D68EFF800E9EEC9 /* AppDelegate.swift in Sources */,
 				86A9E86A2D68EFF800E9EEC9 /* SceneDelegate.swift in Sources */,
 				86D7058A2D6E5F560027248E /* ProductModel.swift in Sources */,
+				86E1230A2D6FED36004E3B4C /* PurchaseHistoryDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
